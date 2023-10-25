@@ -1,0 +1,188 @@
+/* CSS RESET */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* Typographic tweaks! */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Improve media defaults */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Remove built-in form typography styles */
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/* Create a root stacking context */
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/* MY STYLING */
+body {
+    background: linear-gradient(180deg, hsl(240, 73%, 65%), hsl(273, 75%, 66%));
+    font-family: 'Kumbh Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* MAIN STYLING */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    padding-left: 15px;
+    color: hsl(238, 29%, 16%);
+}
+
+#main-div {
+    background: url("images/bg-pattern-desktop.svg") white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left -500px center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1000px;
+    border-radius: 20px;
+    padding: 50px;
+    position: relative;
+}
+
+#box {
+    position: absolute;
+    margin-top: 170px;
+    z-index: 2;
+}
+
+#main-div > img {
+    margin-left: -70px;
+}
+
+.question {
+    font-size: 13px;
+    font-weight: 400;
+    color: hsl(238, 29%, 16%);
+}
+
+.question:hover {
+    color: hsl(14, 88%, 65%);
+    cursor: pointer;
+}
+
+.question-div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.question-div img {
+    align-self: flex-start;
+}
+
+.answer {
+    font-size: 12px;
+    color: hsl(240, 6%, 50%);
+    display: none;
+}
+
+#questions > div {
+    border-bottom: 1px solid hsl(240, 5%, 81%);
+    padding: 15px;
+}
+
+.arrow:hover {
+    cursor: pointer;
+}
+
+/* FOOTER STYLING */
+footer {
+    text-align: center;
+    font-size: 13px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Media Queries */
+@media screen and (max-width: 925px) {
+    #main-div {
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #main-div {
+        grid-template-columns: 1fr;
+        gap: 100px;
+        padding-top: 0;
+    }
+
+    #main-div > img {
+        margin: 0 auto;
+        margin-top: -100px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    #box {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #main-div {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    #main-div {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .question-div {
+        flex-direction: column;
+    }
+
+    .question-div img {
+        margin: auto;
+    }
+
+    .question-div .question {
+        text-align: center;
+    }
+
+    footer span {
+        display: block;
+    }
+}
